@@ -1,0 +1,12 @@
+    Finished release [optimized] target(s) in 0.07s
+     Running `target/release/examples/bench_recursion -v`
+[INFO  bench_recursion] Using random seed  d0d97128dc5a894
+[INFO  bench_recursion] Using 8 compute threads on 8 cores
+[INFO  bench_recursion] Constructing inner proof with 8193 gates
+[INFO  bench_recursion] Initial proof degree 16384 = 2^14
+[INFO  bench_recursion] Single recursion proof degree 4096 = 2^12
+[INFO  bench_recursion] Double recursion proof degree 4096 = 2^12
+[INFO  bench_recursion] Proof length: 127192 bytes
+[INFO  bench_recursion] 0.0038s to compress proof
+[INFO  bench_recursion] Compressed proof length: 115245 bytes
+[INFO  bench_recursion] Common circuit data length: 1345 bytes

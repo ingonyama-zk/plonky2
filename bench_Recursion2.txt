@@ -1,0 +1,185 @@
+    Finished release [optimized] target(s) in 0.20s
+     Running `target/release/examples/bench_recursion -vv`
+[INFO  bench_recursion] Using random seed 6415284bc8bf58c1
+[INFO  bench_recursion] Using 8 compute threads on 8 cores
+[INFO  bench_recursion] Constructing inner proof with 8193 gates
+[DEBUG plonky2::util::context_tree] 8193 gates to root
+[DEBUG plonky2::plonk::circuit_builder] Total gate counts:
+[DEBUG plonky2::plonk::circuit_builder] - 8193 instances of NoopGate
+[DEBUG plonky2::plonk::circuit_builder] Degree before blinding & padding: 8195
+[DEBUG plonky2::plonk::circuit_builder] Degree after blinding & padding: 16384
+[DEBUG plonky2::plonk::circuit_builder] Building circuit took 0.7854801s
+[DEBUG plonky2::util::timing] 0.8429s to prove
+[DEBUG plonky2::util::timing] | 0.0032s to run 132 generators
+[DEBUG plonky2::util::timing] | 0.0054s to compute full witness
+[DEBUG plonky2::util::timing] | 0.0009s to compute wire polynomials
+[DEBUG plonky2::util::timing] | 0.4989s to compute wires commitment
+[DEBUG plonky2::util::timing] | | 0.0069s to IFFT
+[DEBUG plonky2::util::timing] | | 0.0518s to FFT + blinding
+[DEBUG plonky2::util::timing] | | 0.0363s to transpose LDEs
+[DEBUG plonky2::util::timing] | | 0.3998s to build Merkle tree
+[DEBUG plonky2::util::timing] | 0.0142s to compute partial products
+[DEBUG plonky2::util::timing] | 0.1012s to commit to partial products, Z's and, if any, lookup polynomials
+[DEBUG plonky2::util::timing] | | 0.0012s to IFFT
+[DEBUG plonky2::util::timing] | | 0.0078s to FFT + blinding
+[DEBUG plonky2::util::timing] | | 0.0015s to transpose LDEs
+[DEBUG plonky2::util::timing] | | 0.0900s to build Merkle tree
+[DEBUG plonky2::util::timing] | 0.0646s to compute quotient polys
+[DEBUG plonky2::util::timing] | 0.0002s to split up quotient polys
+[DEBUG plonky2::util::timing] | 0.0746s to commit to quotient polys
+[DEBUG plonky2::util::timing] | | 0.0070s to FFT + blinding
+[DEBUG plonky2::util::timing] | | 0.0010s to transpose LDEs
+[DEBUG plonky2::util::timing] | | 0.0661s to build Merkle tree
+[DEBUG plonky2::util::timing] | 0.0059s to construct the opening set, including lookups
+[DEBUG plonky2::util::timing] | 0.0342s to compute opening proofs
+[DEBUG plonky2::util::timing] | | 0.0128s to reduce batch of 254 polynomials
+[DEBUG plonky2::util::timing] | | 0.0001s to reduce batch of 2 polynomials
+[DEBUG plonky2::util::timing] | | 0.0070s to perform final FFT 131072
+[DEBUG plonky2::util::timing] | | 0.0093s to fold codewords in the commitment phase
+[DEBUG plonky2::util::timing] | | 0.0039s to find proof-of-work witness
+[INFO  bench_recursion] Initial proof degree 16384 = 2^14
+[DEBUG plonky2::util::context_tree] 4025 gates to root
+[DEBUG plonky2::util::context_tree] | 84 gates to evaluate the vanishing polynomial at our challenge point, zeta.
+[DEBUG plonky2::util::context_tree] | | 2 gates to evaluate gate constraints
+[DEBUG plonky2::util::context_tree] | | | 1 gates to evaluate NoopGate constraints
+[DEBUG plonky2::util::context_tree] | | | 0 gates to evaluate ConstantGate { num_consts: 2 } constraints
+[DEBUG plonky2::util::context_tree] | | | 1 gates to evaluate PublicInputGate constraints
+[DEBUG plonky2::util::context_tree] | 2 gates to check vanishing and quotient polynomials.
+[DEBUG plonky2::util::context_tree] | 3819 gates to verify FRI proof
+[DEBUG plonky2::util::context_tree] | | 1 gates to check PoW
+[DEBUG plonky2::util::context_tree] | | 8 gates to precompute reduced evaluations
+[DEBUG plonky2::util::context_tree] | | 133 gates to verify one (of 28) query rounds
+[DEBUG plonky2::util::context_tree] | | | 89 gates to check FRI initial proof
+[DEBUG plonky2::util::context_tree] | | | | 25 gates to verify 0'th initial Merkle proof
+[DEBUG plonky2::util::context_tree] | | | | 31 gates to verify 1'th initial Merkle proof
+[DEBUG plonky2::util::context_tree] | | | | 17 gates to verify 2'th initial Merkle proof
+[DEBUG plonky2::util::context_tree] | | | | 16 gates to verify 3'th initial Merkle proof
+[DEBUG plonky2::util::context_tree] | | | 0 gates to compute x from its index
+[DEBUG plonky2::util::context_tree] | | | 6 gates to combine initial oracles
+[DEBUG plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[DEBUG plonky2::util::context_tree] | | | 14 gates to verify FRI round Merkle proof.
+[DEBUG plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[DEBUG plonky2::util::context_tree] | | | 10 gates to verify FRI round Merkle proof.
+[DEBUG plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[DEBUG plonky2::util::context_tree] | | | 6 gates to verify FRI round Merkle proof.
+[DEBUG plonky2::util::context_tree] | | | 0 gates to evaluate final polynomial of length 4
+[DEBUG plonky2::plonk::circuit_builder] Total gate counts:
+[DEBUG plonky2::plonk::circuit_builder] - 95 instances of ArithmeticGate { num_ops: 20 }
+[DEBUG plonky2::plonk::circuit_builder] - 84 instances of CosetInterpolationGate { subgroup_bits: 4, degree: 6, barycentric_weights: [17293822565076172801, 18374686475376656385, 18446744069413535745, 281474976645120, 17592186044416, 256, 18446744000695107601, 18446744065119617025, 1152921504338411520, 72057594037927936, 1048576, 18446462594437939201, 18446726477228539905, 18446744069414584065, 68719476720, 4294967296], _phantom: PhantomData<plonky2_field::goldilocks_field::GoldilocksField> }<D=2>
+[DEBUG plonky2::plonk::circuit_builder] - 79 instances of ArithmeticExtensionGate { num_ops: 10 }
+[DEBUG plonky2::plonk::circuit_builder] - 10 instances of ReducingExtensionGate { num_coeffs: 32 }
+[DEBUG plonky2::plonk::circuit_builder] - 57 instances of BaseSumGate { num_limbs: 63 } + Base: 2
+[DEBUG plonky2::plonk::circuit_builder] - 3254 instances of PoseidonGate(PhantomData<plonky2_field::goldilocks_field::GoldilocksField>)<WIDTH=12>
+[DEBUG plonky2::plonk::circuit_builder] - 238 instances of RandomAccessGate { bits: 4, num_copies: 4, num_extra_constants: 2, _phantom: PhantomData<plonky2_field::goldilocks_field::GoldilocksField> }<D=2>
+[DEBUG plonky2::plonk::circuit_builder] - 168 instances of ReducingGate { num_coeffs: 43 }
+[DEBUG plonky2::plonk::circuit_builder] - 40 instances of MulExtensionGate { num_ops: 13 }
+[DEBUG plonky2::plonk::circuit_builder] Degree before blinding & padding: 4026
+[DEBUG plonky2::plonk::circuit_builder] Degree after blinding & padding: 4096
+[DEBUG plonky2::plonk::circuit_builder] Building circuit took 0.14580607s
+[DEBUG plonky2::util::timing] 0.2871s to prove
+[DEBUG plonky2::util::timing] | 0.0232s to run 7749 generators
+[DEBUG plonky2::util::timing] | 0.0041s to compute full witness
+[DEBUG plonky2::util::timing] | 0.0002s to compute wire polynomials
+[DEBUG plonky2::util::timing] | 0.1125s to compute wires commitment
+[DEBUG plonky2::util::timing] | | 0.0015s to IFFT
+[DEBUG plonky2::util::timing] | | 0.0106s to FFT + blinding
+[DEBUG plonky2::util::timing] | | 0.0021s to transpose LDEs
+[DEBUG plonky2::util::timing] | | 0.0973s to build Merkle tree
+[DEBUG plonky2::util::timing] | 0.0033s to compute partial products
+[DEBUG plonky2::util::timing] | 0.0258s to commit to partial products, Z's and, if any, lookup polynomials
+[DEBUG plonky2::util::timing] | | 0.0003s to IFFT
+[DEBUG plonky2::util::timing] | | 0.0021s to FFT + blinding
+[DEBUG plonky2::util::timing] | | 0.0003s to transpose LDEs
+[DEBUG plonky2::util::timing] | | 0.0216s to build Merkle tree
+[DEBUG plonky2::util::timing] | 0.0495s to compute quotient polys
+[DEBUG plonky2::util::timing] | 0.0001s to split up quotient polys
+[DEBUG plonky2::util::timing] | 0.0188s to commit to quotient polys
+[DEBUG plonky2::util::timing] | | 0.0016s to FFT + blinding
+[DEBUG plonky2::util::timing] | | 0.0003s to transpose LDEs
+[DEBUG plonky2::util::timing] | | 0.0164s to build Merkle tree
+[DEBUG plonky2::util::timing] | 0.0019s to construct the opening set, including lookups
+[DEBUG plonky2::util::timing] | 0.0398s to compute opening proofs
+[DEBUG plonky2::util::timing] | | 0.0033s to reduce batch of 256 polynomials
+[DEBUG plonky2::util::timing] | | 0.0000s to reduce batch of 2 polynomials
+[DEBUG plonky2::util::timing] | | 0.0016s to perform final FFT 32768
+[DEBUG plonky2::util::timing] | | 0.0025s to fold codewords in the commitment phase
+[DEBUG plonky2::util::timing] | | 0.0320s to find proof-of-work witness
+[INFO  bench_recursion] Single recursion proof degree 4096 = 2^12
+[DEBUG plonky2::util::context_tree] 3754 gates to root
+[DEBUG plonky2::util::context_tree] | 367 gates to evaluate the vanishing polynomial at our challenge point, zeta.
+[DEBUG plonky2::util::context_tree] | | 276 gates to evaluate gate constraints
+[DEBUG plonky2::util::context_tree] | | | 2 gates to evaluate NoopGate constraints
+[DEBUG plonky2::util::context_tree] | | | 0 gates to evaluate PublicInputGate constraints
+[DEBUG plonky2::util::context_tree] | | | 15 gates to evaluate BaseSumGate { num_limbs: 63 } + Base: 2 constraints
+[DEBUG plonky2::util::context_tree] | | | 27 gates to evaluate ReducingExtensionGate { num_coeffs: 32 } constraints
+[DEBUG plonky2::util::context_tree] | | | 33 gates to evaluate ReducingGate { num_coeffs: 43 } constraints
+[DEBUG plonky2::util::context_tree] | | | 11 gates to evaluate ArithmeticExtensionGate { num_ops: 10 } constraints
+[DEBUG plonky2::util::context_tree] | | | 10 gates to evaluate ArithmeticGate { num_ops: 20 } constraints
+[DEBUG plonky2::util::context_tree] | | | 10 gates to evaluate MulExtensionGate { num_ops: 13 } constraints
+[DEBUG plonky2::util::context_tree] | | | 18 gates to evaluate RandomAccessGate { bits: 4, num_copies: 4, num_extra_constants: 2, _phantom: PhantomData<plonky2_field::goldilocks_field::GoldilocksField> }<D=2> constraints
+[DEBUG plonky2::util::context_tree] | | | 23 gates to evaluate CosetInterpolationGate { subgroup_bits: 4, degree: 6, barycentric_weights: [17293822565076172801, 18374686475376656385, 18446744069413535745, 281474976645120, 17592186044416, 256, 18446744000695107601, 18446744065119617025, 1152921504338411520, 72057594037927936, 1048576, 18446462594437939201, 18446726477228539905, 18446744069414584065, 68719476720, 4294967296], _phantom: PhantomData<plonky2_field::goldilocks_field::GoldilocksField> }<D=2> constraints
+[DEBUG plonky2::util::context_tree] | | | 127 gates to evaluate PoseidonGate(PhantomData<plonky2_field::goldilocks_field::GoldilocksField>)<WIDTH=12> constraints
+[DEBUG plonky2::util::context_tree] | 1 gates to check vanishing and quotient polynomials.
+[DEBUG plonky2::util::context_tree] | 3271 gates to verify FRI proof
+[DEBUG plonky2::util::context_tree] | | 1 gates to check PoW
+[DEBUG plonky2::util::context_tree] | | 8 gates to precompute reduced evaluations
+[DEBUG plonky2::util::context_tree] | | 114 gates to verify one (of 28) query rounds
+[DEBUG plonky2::util::context_tree] | | | 81 gates to check FRI initial proof
+[DEBUG plonky2::util::context_tree] | | | | 23 gates to verify 0'th initial Merkle proof
+[DEBUG plonky2::util::context_tree] | | | | 29 gates to verify 1'th initial Merkle proof
+[DEBUG plonky2::util::context_tree] | | | | 15 gates to verify 2'th initial Merkle proof
+[DEBUG plonky2::util::context_tree] | | | | 14 gates to verify 3'th initial Merkle proof
+[DEBUG plonky2::util::context_tree] | | | 0 gates to compute x from its index
+[DEBUG plonky2::util::context_tree] | | | 6 gates to combine initial oracles
+[DEBUG plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[DEBUG plonky2::util::context_tree] | | | 12 gates to verify FRI round Merkle proof.
+[DEBUG plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[DEBUG plonky2::util::context_tree] | | | 8 gates to verify FRI round Merkle proof.
+[DEBUG plonky2::util::context_tree] | | | 1 gates to evaluate final polynomial of length 16
+[DEBUG plonky2::plonk::circuit_builder] Total gate counts:
+[DEBUG plonky2::plonk::circuit_builder] - 72 instances of ArithmeticGate { num_ops: 20 }
+[DEBUG plonky2::plonk::circuit_builder] - 56 instances of CosetInterpolationGate { subgroup_bits: 4, degree: 6, barycentric_weights: [17293822565076172801, 18374686475376656385, 18446744069413535745, 281474976645120, 17592186044416, 256, 18446744000695107601, 18446744065119617025, 1152921504338411520, 72057594037927936, 1048576, 18446462594437939201, 18446726477228539905, 18446744069414584065, 68719476720, 4294967296], _phantom: PhantomData<plonky2_field::goldilocks_field::GoldilocksField> }<D=2>
+[DEBUG plonky2::plonk::circuit_builder] - 246 instances of ArithmeticExtensionGate { num_ops: 10 }
+[DEBUG plonky2::plonk::circuit_builder] - 48 instances of ReducingExtensionGate { num_coeffs: 32 }
+[DEBUG plonky2::plonk::circuit_builder] - 57 instances of BaseSumGate { num_limbs: 63 } + Base: 2
+[DEBUG plonky2::plonk::circuit_builder] - 2774 instances of PoseidonGate(PhantomData<plonky2_field::goldilocks_field::GoldilocksField>)<WIDTH=12>
+[DEBUG plonky2::plonk::circuit_builder] - 196 instances of RandomAccessGate { bits: 4, num_copies: 4, num_extra_constants: 2, _phantom: PhantomData<plonky2_field::goldilocks_field::GoldilocksField> }<D=2>
+[DEBUG plonky2::plonk::circuit_builder] - 168 instances of ReducingGate { num_coeffs: 43 }
+[DEBUG plonky2::plonk::circuit_builder] - 30 instances of PoseidonMdsGate(PhantomData<plonky2_field::goldilocks_field::GoldilocksField>)<WIDTH=12>
+[DEBUG plonky2::plonk::circuit_builder] - 107 instances of MulExtensionGate { num_ops: 13 }
+[DEBUG plonky2::plonk::circuit_builder] Degree before blinding & padding: 3801
+[DEBUG plonky2::plonk::circuit_builder] Degree after blinding & padding: 4096
+[DEBUG plonky2::plonk::circuit_builder] Building circuit took 0.14564104s
+[DEBUG plonky2::util::timing] 0.2761s to prove
+[DEBUG plonky2::util::timing] | 0.0232s to run 9674 generators
+[DEBUG plonky2::util::timing] | 0.0036s to compute full witness
+[DEBUG plonky2::util::timing] | 0.0002s to compute wire polynomials
+[DEBUG plonky2::util::timing] | 0.1132s to compute wires commitment
+[DEBUG plonky2::util::timing] | | 0.0015s to IFFT
+[DEBUG plonky2::util::timing] | | 0.0108s to FFT + blinding
+[DEBUG plonky2::util::timing] | | 0.0025s to transpose LDEs
+[DEBUG plonky2::util::timing] | | 0.0962s to build Merkle tree
+[DEBUG plonky2::util::timing] | 0.0037s to compute partial products
+[DEBUG plonky2::util::timing] | 0.0246s to commit to partial products, Z's and, if any, lookup polynomials
+[DEBUG plonky2::util::timing] | | 0.0003s to IFFT
+[DEBUG plonky2::util::timing] | | 0.0016s to FFT + blinding
+[DEBUG plonky2::util::timing] | | 0.0003s to transpose LDEs
+[DEBUG plonky2::util::timing] | | 0.0218s to build Merkle tree
+[DEBUG plonky2::util::timing] | 0.0536s to compute quotient polys
+[DEBUG plonky2::util::timing] | 0.0006s to split up quotient polys
+[DEBUG plonky2::util::timing] | 0.0205s to commit to quotient polys
+[DEBUG plonky2::util::timing] | | 0.0016s to FFT + blinding
+[DEBUG plonky2::util::timing] | | 0.0003s to transpose LDEs
+[DEBUG plonky2::util::timing] | | 0.0175s to build Merkle tree
+[DEBUG plonky2::util::timing] | 0.0020s to construct the opening set, including lookups
+[DEBUG plonky2::util::timing] | 0.0230s to compute opening proofs
+[DEBUG plonky2::util::timing] | | 0.0033s to reduce batch of 256 polynomials
+[DEBUG plonky2::util::timing] | | 0.0000s to reduce batch of 2 polynomials
+[DEBUG plonky2::util::timing] | | 0.0016s to perform final FFT 32768
+[DEBUG plonky2::util::timing] | | 0.0025s to fold codewords in the commitment phase
+[DEBUG plonky2::util::timing] | | 0.0152s to find proof-of-work witness
+[INFO  bench_recursion] Double recursion proof degree 4096 = 2^12
+[INFO  bench_recursion] Proof length: 127192 bytes
+[INFO  bench_recursion] 0.0038s to compress proof
+[INFO  bench_recursion] Compressed proof length: 115100 bytes
+[INFO  bench_recursion] Common circuit data length: 1345 bytes

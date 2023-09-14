@@ -1,0 +1,959 @@
+    Finished release [optimized] target(s) in 0.08s
+     Running `target/release/examples/bench_recursion -vvvv`
+[INFO  bench_recursion] Using random seed 6a7005dfcd87a0aa
+[INFO  bench_recursion] Using 8 compute threads on 8 cores
+[INFO  bench_recursion] Constructing inner proof with 8193 gates
+[DEBUG plonky2::util::context_tree] 8193 gates to root
+[DEBUG plonky2::plonk::circuit_builder] Total gate counts:
+[DEBUG plonky2::plonk::circuit_builder] - 8193 instances of NoopGate
+[DEBUG plonky2::plonk::circuit_builder] Degree before blinding & padding: 8195
+[DEBUG plonky2::plonk::circuit_builder] Degree after blinding & padding: 16384
+[TRACE plonky2::util::timing] 0.8019s to preprocess
+[TRACE plonky2::util::timing] | 0.4080s to generate sigma polynomials
+[TRACE plonky2::util::timing] | 0.0054s to IFFT
+[TRACE plonky2::util::timing] | 0.0387s to FFT + blinding
+[TRACE plonky2::util::timing] | 0.0072s to transpose LDEs
+[TRACE plonky2::util::timing] | 0.3320s to build Merkle tree
+[DEBUG plonky2::plonk::circuit_builder] Building circuit took 0.8019745s
+[DEBUG plonky2::util::timing] 1.0281s to prove
+[DEBUG plonky2::util::timing] | 0.0034s to run 132 generators
+[DEBUG plonky2::util::timing] | 0.0050s to compute full witness
+[DEBUG plonky2::util::timing] | 0.0048s to compute wire polynomials
+[DEBUG plonky2::util::timing] | 0.5835s to compute wires commitment
+[DEBUG plonky2::util::timing] | | 0.0115s to IFFT
+[DEBUG plonky2::util::timing] | | 0.0569s to FFT + blinding
+[DEBUG plonky2::util::timing] | | 0.0136s to transpose LDEs
+[DEBUG plonky2::util::timing] | | 0.4978s to build Merkle tree
+[DEBUG plonky2::util::timing] | 0.0219s to compute partial products
+[DEBUG plonky2::util::timing] | 0.1200s to commit to partial products, Z's and, if any, lookup polynomials
+[DEBUG plonky2::util::timing] | | 0.0016s to IFFT
+[DEBUG plonky2::util::timing] | | 0.0095s to FFT + blinding
+[DEBUG plonky2::util::timing] | | 0.0020s to transpose LDEs
+[DEBUG plonky2::util::timing] | | 0.1057s to build Merkle tree
+[DEBUG plonky2::util::timing] | 0.0823s to compute quotient polys
+[DEBUG plonky2::util::timing] | 0.0006s to split up quotient polys
+[DEBUG plonky2::util::timing] | 0.0945s to commit to quotient polys
+[DEBUG plonky2::util::timing] | | 0.0079s to FFT + blinding
+[DEBUG plonky2::util::timing] | | 0.0014s to transpose LDEs
+[DEBUG plonky2::util::timing] | | 0.0842s to build Merkle tree
+[DEBUG plonky2::util::timing] | 0.0071s to construct the opening set, including lookups
+[DEBUG plonky2::util::timing] | 0.0644s to compute opening proofs
+[DEBUG plonky2::util::timing] | | 0.0259s to reduce batch of 254 polynomials
+[DEBUG plonky2::util::timing] | | 0.0002s to reduce batch of 2 polynomials
+[DEBUG plonky2::util::timing] | | 0.0074s to perform final FFT 131072
+[DEBUG plonky2::util::timing] | | 0.0115s to fold codewords in the commitment phase
+[DEBUG plonky2::util::timing] | | 0.0182s to find proof-of-work witness
+[INFO  bench_recursion] Initial proof degree 16384 = 2^14
+[DEBUG plonky2::util::context_tree] 4025 gates to root
+[DEBUG plonky2::util::context_tree] | 84 gates to evaluate the vanishing polynomial at our challenge point, zeta.
+[DEBUG plonky2::util::context_tree] | | 2 gates to evaluate gate constraints
+[DEBUG plonky2::util::context_tree] | | | 1 gates to evaluate NoopGate constraints
+[DEBUG plonky2::util::context_tree] | | | 0 gates to evaluate ConstantGate { num_consts: 2 } constraints
+[DEBUG plonky2::util::context_tree] | | | 1 gates to evaluate PublicInputGate constraints
+[DEBUG plonky2::util::context_tree] | 2 gates to check vanishing and quotient polynomials.
+[DEBUG plonky2::util::context_tree] | 3819 gates to verify FRI proof
+[DEBUG plonky2::util::context_tree] | | 1 gates to check PoW
+[DEBUG plonky2::util::context_tree] | | 8 gates to precompute reduced evaluations
+[TRACE plonky2::util::context_tree] | | 156 gates to verify one (of 28) query rounds
+[TRACE plonky2::util::context_tree] | | | 89 gates to check FRI initial proof
+[TRACE plonky2::util::context_tree] | | | | 25 gates to verify 0'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 31 gates to verify 1'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 17 gates to verify 2'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 16 gates to verify 3'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | 18 gates to compute x from its index
+[TRACE plonky2::util::context_tree] | | | 7 gates to combine initial oracles
+[TRACE plonky2::util::context_tree] | | | 4 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 14 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 10 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 6 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to evaluate final polynomial of length 4
+[DEBUG plonky2::util::context_tree] | | 133 gates to verify one (of 28) query rounds
+[DEBUG plonky2::util::context_tree] | | | 89 gates to check FRI initial proof
+[DEBUG plonky2::util::context_tree] | | | | 25 gates to verify 0'th initial Merkle proof
+[DEBUG plonky2::util::context_tree] | | | | 31 gates to verify 1'th initial Merkle proof
+[DEBUG plonky2::util::context_tree] | | | | 17 gates to verify 2'th initial Merkle proof
+[DEBUG plonky2::util::context_tree] | | | | 16 gates to verify 3'th initial Merkle proof
+[DEBUG plonky2::util::context_tree] | | | 0 gates to compute x from its index
+[DEBUG plonky2::util::context_tree] | | | 6 gates to combine initial oracles
+[DEBUG plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[DEBUG plonky2::util::context_tree] | | | 14 gates to verify FRI round Merkle proof.
+[DEBUG plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[DEBUG plonky2::util::context_tree] | | | 10 gates to verify FRI round Merkle proof.
+[DEBUG plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[DEBUG plonky2::util::context_tree] | | | 6 gates to verify FRI round Merkle proof.
+[DEBUG plonky2::util::context_tree] | | | 0 gates to evaluate final polynomial of length 4
+[TRACE plonky2::util::context_tree] | | 135 gates to verify one (of 28) query rounds
+[TRACE plonky2::util::context_tree] | | | 89 gates to check FRI initial proof
+[TRACE plonky2::util::context_tree] | | | | 25 gates to verify 0'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 31 gates to verify 1'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 17 gates to verify 2'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 16 gates to verify 3'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | 0 gates to compute x from its index
+[TRACE plonky2::util::context_tree] | | | 7 gates to combine initial oracles
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 14 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 10 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 6 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to evaluate final polynomial of length 4
+[TRACE plonky2::util::context_tree] | | 134 gates to verify one (of 28) query rounds
+[TRACE plonky2::util::context_tree] | | | 89 gates to check FRI initial proof
+[TRACE plonky2::util::context_tree] | | | | 25 gates to verify 0'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 31 gates to verify 1'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 17 gates to verify 2'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 16 gates to verify 3'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | 0 gates to compute x from its index
+[TRACE plonky2::util::context_tree] | | | 7 gates to combine initial oracles
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 14 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 10 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 6 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 0 gates to evaluate final polynomial of length 4
+[TRACE plonky2::util::context_tree] | | 134 gates to verify one (of 28) query rounds
+[TRACE plonky2::util::context_tree] | | | 89 gates to check FRI initial proof
+[TRACE plonky2::util::context_tree] | | | | 25 gates to verify 0'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 31 gates to verify 1'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 17 gates to verify 2'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 16 gates to verify 3'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | 0 gates to compute x from its index
+[TRACE plonky2::util::context_tree] | | | 6 gates to combine initial oracles
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 14 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 10 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 6 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to evaluate final polynomial of length 4
+[TRACE plonky2::util::context_tree] | | 135 gates to verify one (of 28) query rounds
+[TRACE plonky2::util::context_tree] | | | 89 gates to check FRI initial proof
+[TRACE plonky2::util::context_tree] | | | | 25 gates to verify 0'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 31 gates to verify 1'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 17 gates to verify 2'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 16 gates to verify 3'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | 2 gates to compute x from its index
+[TRACE plonky2::util::context_tree] | | | 8 gates to combine initial oracles
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 14 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 10 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 6 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 0 gates to evaluate final polynomial of length 4
+[TRACE plonky2::util::context_tree] | | 138 gates to verify one (of 28) query rounds
+[TRACE plonky2::util::context_tree] | | | 89 gates to check FRI initial proof
+[TRACE plonky2::util::context_tree] | | | | 25 gates to verify 0'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 31 gates to verify 1'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 17 gates to verify 2'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 16 gates to verify 3'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | 0 gates to compute x from its index
+[TRACE plonky2::util::context_tree] | | | 6 gates to combine initial oracles
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 14 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 10 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 4 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 6 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to evaluate final polynomial of length 4
+[TRACE plonky2::util::context_tree] | | 133 gates to verify one (of 28) query rounds
+[TRACE plonky2::util::context_tree] | | | 89 gates to check FRI initial proof
+[TRACE plonky2::util::context_tree] | | | | 25 gates to verify 0'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 31 gates to verify 1'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 17 gates to verify 2'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 16 gates to verify 3'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | 0 gates to compute x from its index
+[TRACE plonky2::util::context_tree] | | | 6 gates to combine initial oracles
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 14 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 10 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 6 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 0 gates to evaluate final polynomial of length 4
+[TRACE plonky2::util::context_tree] | | 135 gates to verify one (of 28) query rounds
+[TRACE plonky2::util::context_tree] | | | 89 gates to check FRI initial proof
+[TRACE plonky2::util::context_tree] | | | | 25 gates to verify 0'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 31 gates to verify 1'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 17 gates to verify 2'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 16 gates to verify 3'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | 0 gates to compute x from its index
+[TRACE plonky2::util::context_tree] | | | 7 gates to combine initial oracles
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 14 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 10 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 6 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to evaluate final polynomial of length 4
+[TRACE plonky2::util::context_tree] | | 133 gates to verify one (of 28) query rounds
+[TRACE plonky2::util::context_tree] | | | 89 gates to check FRI initial proof
+[TRACE plonky2::util::context_tree] | | | | 25 gates to verify 0'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 31 gates to verify 1'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 17 gates to verify 2'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 16 gates to verify 3'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | 0 gates to compute x from its index
+[TRACE plonky2::util::context_tree] | | | 7 gates to combine initial oracles
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 14 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 10 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 6 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 0 gates to evaluate final polynomial of length 4
+[TRACE plonky2::util::context_tree] | | 137 gates to verify one (of 28) query rounds
+[TRACE plonky2::util::context_tree] | | | 89 gates to check FRI initial proof
+[TRACE plonky2::util::context_tree] | | | | 25 gates to verify 0'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 31 gates to verify 1'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 17 gates to verify 2'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 16 gates to verify 3'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | 2 gates to compute x from its index
+[TRACE plonky2::util::context_tree] | | | 7 gates to combine initial oracles
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 14 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 10 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 6 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to evaluate final polynomial of length 4
+[TRACE plonky2::util::context_tree] | | 132 gates to verify one (of 28) query rounds
+[TRACE plonky2::util::context_tree] | | | 89 gates to check FRI initial proof
+[TRACE plonky2::util::context_tree] | | | | 25 gates to verify 0'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 31 gates to verify 1'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 17 gates to verify 2'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 16 gates to verify 3'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | 0 gates to compute x from its index
+[TRACE plonky2::util::context_tree] | | | 6 gates to combine initial oracles
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 14 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 10 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 6 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 0 gates to evaluate final polynomial of length 4
+[TRACE plonky2::util::context_tree] | | 136 gates to verify one (of 28) query rounds
+[TRACE plonky2::util::context_tree] | | | 89 gates to check FRI initial proof
+[TRACE plonky2::util::context_tree] | | | | 25 gates to verify 0'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 31 gates to verify 1'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 17 gates to verify 2'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 16 gates to verify 3'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | 0 gates to compute x from its index
+[TRACE plonky2::util::context_tree] | | | 7 gates to combine initial oracles
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 14 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 10 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 6 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to evaluate final polynomial of length 4
+[TRACE plonky2::util::context_tree] | | 137 gates to verify one (of 28) query rounds
+[TRACE plonky2::util::context_tree] | | | 89 gates to check FRI initial proof
+[TRACE plonky2::util::context_tree] | | | | 25 gates to verify 0'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 31 gates to verify 1'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 17 gates to verify 2'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 16 gates to verify 3'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | 0 gates to compute x from its index
+[TRACE plonky2::util::context_tree] | | | 7 gates to combine initial oracles
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 14 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 4 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 10 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 6 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 0 gates to evaluate final polynomial of length 4
+[TRACE plonky2::util::context_tree] | | 133 gates to verify one (of 28) query rounds
+[TRACE plonky2::util::context_tree] | | | 89 gates to check FRI initial proof
+[TRACE plonky2::util::context_tree] | | | | 25 gates to verify 0'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 31 gates to verify 1'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 17 gates to verify 2'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 16 gates to verify 3'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | 0 gates to compute x from its index
+[TRACE plonky2::util::context_tree] | | | 6 gates to combine initial oracles
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 14 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 10 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 6 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to evaluate final polynomial of length 4
+[TRACE plonky2::util::context_tree] | | 136 gates to verify one (of 28) query rounds
+[TRACE plonky2::util::context_tree] | | | 89 gates to check FRI initial proof
+[TRACE plonky2::util::context_tree] | | | | 25 gates to verify 0'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 31 gates to verify 1'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 17 gates to verify 2'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 16 gates to verify 3'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | 2 gates to compute x from its index
+[TRACE plonky2::util::context_tree] | | | 8 gates to combine initial oracles
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 14 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 10 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 6 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 0 gates to evaluate final polynomial of length 4
+[TRACE plonky2::util::context_tree] | | 135 gates to verify one (of 28) query rounds
+[TRACE plonky2::util::context_tree] | | | 89 gates to check FRI initial proof
+[TRACE plonky2::util::context_tree] | | | | 25 gates to verify 0'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 31 gates to verify 1'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 17 gates to verify 2'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 16 gates to verify 3'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | 0 gates to compute x from its index
+[TRACE plonky2::util::context_tree] | | | 6 gates to combine initial oracles
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 14 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 10 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 6 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to evaluate final polynomial of length 4
+[TRACE plonky2::util::context_tree] | | 132 gates to verify one (of 28) query rounds
+[TRACE plonky2::util::context_tree] | | | 89 gates to check FRI initial proof
+[TRACE plonky2::util::context_tree] | | | | 25 gates to verify 0'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 31 gates to verify 1'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 17 gates to verify 2'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 16 gates to verify 3'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | 0 gates to compute x from its index
+[TRACE plonky2::util::context_tree] | | | 6 gates to combine initial oracles
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 14 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 10 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 6 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 0 gates to evaluate final polynomial of length 4
+[TRACE plonky2::util::context_tree] | | 137 gates to verify one (of 28) query rounds
+[TRACE plonky2::util::context_tree] | | | 89 gates to check FRI initial proof
+[TRACE plonky2::util::context_tree] | | | | 25 gates to verify 0'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 31 gates to verify 1'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 17 gates to verify 2'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 16 gates to verify 3'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | 0 gates to compute x from its index
+[TRACE plonky2::util::context_tree] | | | 8 gates to combine initial oracles
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 14 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 10 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 6 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to evaluate final polynomial of length 4
+[TRACE plonky2::util::context_tree] | | 131 gates to verify one (of 28) query rounds
+[TRACE plonky2::util::context_tree] | | | 89 gates to check FRI initial proof
+[TRACE plonky2::util::context_tree] | | | | 25 gates to verify 0'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 31 gates to verify 1'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 17 gates to verify 2'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 16 gates to verify 3'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | 0 gates to compute x from its index
+[TRACE plonky2::util::context_tree] | | | 6 gates to combine initial oracles
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 14 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 10 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 6 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 0 gates to evaluate final polynomial of length 4
+[TRACE plonky2::util::context_tree] | | 156 gates to verify one (of 28) query rounds
+[TRACE plonky2::util::context_tree] | | | 89 gates to check FRI initial proof
+[TRACE plonky2::util::context_tree] | | | | 25 gates to verify 0'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 31 gates to verify 1'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 17 gates to verify 2'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 16 gates to verify 3'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | 18 gates to compute x from its index
+[TRACE plonky2::util::context_tree] | | | 7 gates to combine initial oracles
+[TRACE plonky2::util::context_tree] | | | 4 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 14 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 10 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 6 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to evaluate final polynomial of length 4
+[TRACE plonky2::util::context_tree] | | 133 gates to verify one (of 28) query rounds
+[TRACE plonky2::util::context_tree] | | | 89 gates to check FRI initial proof
+[TRACE plonky2::util::context_tree] | | | | 25 gates to verify 0'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 31 gates to verify 1'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 17 gates to verify 2'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 16 gates to verify 3'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | 0 gates to compute x from its index
+[TRACE plonky2::util::context_tree] | | | 6 gates to combine initial oracles
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 14 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 10 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 6 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 0 gates to evaluate final polynomial of length 4
+[TRACE plonky2::util::context_tree] | | 135 gates to verify one (of 28) query rounds
+[TRACE plonky2::util::context_tree] | | | 89 gates to check FRI initial proof
+[TRACE plonky2::util::context_tree] | | | | 25 gates to verify 0'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 31 gates to verify 1'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 17 gates to verify 2'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 16 gates to verify 3'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | 0 gates to compute x from its index
+[TRACE plonky2::util::context_tree] | | | 7 gates to combine initial oracles
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 14 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 10 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 6 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to evaluate final polynomial of length 4
+[TRACE plonky2::util::context_tree] | | 134 gates to verify one (of 28) query rounds
+[TRACE plonky2::util::context_tree] | | | 89 gates to check FRI initial proof
+[TRACE plonky2::util::context_tree] | | | | 25 gates to verify 0'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 31 gates to verify 1'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 17 gates to verify 2'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 16 gates to verify 3'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | 0 gates to compute x from its index
+[TRACE plonky2::util::context_tree] | | | 7 gates to combine initial oracles
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 14 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 10 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 6 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 0 gates to evaluate final polynomial of length 4
+[TRACE plonky2::util::context_tree] | | 134 gates to verify one (of 28) query rounds
+[TRACE plonky2::util::context_tree] | | | 89 gates to check FRI initial proof
+[TRACE plonky2::util::context_tree] | | | | 25 gates to verify 0'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 31 gates to verify 1'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 17 gates to verify 2'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 16 gates to verify 3'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | 0 gates to compute x from its index
+[TRACE plonky2::util::context_tree] | | | 6 gates to combine initial oracles
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 14 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 10 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 6 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to evaluate final polynomial of length 4
+[TRACE plonky2::util::context_tree] | | 135 gates to verify one (of 28) query rounds
+[TRACE plonky2::util::context_tree] | | | 89 gates to check FRI initial proof
+[TRACE plonky2::util::context_tree] | | | | 25 gates to verify 0'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 31 gates to verify 1'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 17 gates to verify 2'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 16 gates to verify 3'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | 2 gates to compute x from its index
+[TRACE plonky2::util::context_tree] | | | 8 gates to combine initial oracles
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 14 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 10 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 6 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 0 gates to evaluate final polynomial of length 4
+[TRACE plonky2::util::context_tree] | | 138 gates to verify one (of 28) query rounds
+[TRACE plonky2::util::context_tree] | | | 89 gates to check FRI initial proof
+[TRACE plonky2::util::context_tree] | | | | 25 gates to verify 0'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 31 gates to verify 1'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 17 gates to verify 2'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 16 gates to verify 3'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | 0 gates to compute x from its index
+[TRACE plonky2::util::context_tree] | | | 6 gates to combine initial oracles
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 14 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 10 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 4 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 6 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to evaluate final polynomial of length 4
+[TRACE plonky2::util::context_tree] | | 133 gates to verify one (of 28) query rounds
+[TRACE plonky2::util::context_tree] | | | 89 gates to check FRI initial proof
+[TRACE plonky2::util::context_tree] | | | | 25 gates to verify 0'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 31 gates to verify 1'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 17 gates to verify 2'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 16 gates to verify 3'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | 0 gates to compute x from its index
+[TRACE plonky2::util::context_tree] | | | 6 gates to combine initial oracles
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 14 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 10 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 6 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 0 gates to evaluate final polynomial of length 4
+[DEBUG plonky2::plonk::circuit_builder] Total gate counts:
+[DEBUG plonky2::plonk::circuit_builder] - 95 instances of ArithmeticGate { num_ops: 20 }
+[DEBUG plonky2::plonk::circuit_builder] - 84 instances of CosetInterpolationGate { subgroup_bits: 4, degree: 6, barycentric_weights: [17293822565076172801, 18374686475376656385, 18446744069413535745, 281474976645120, 17592186044416, 256, 18446744000695107601, 18446744065119617025, 1152921504338411520, 72057594037927936, 1048576, 18446462594437939201, 18446726477228539905, 18446744069414584065, 68719476720, 4294967296], _phantom: PhantomData<plonky2_field::goldilocks_field::GoldilocksField> }<D=2>
+[DEBUG plonky2::plonk::circuit_builder] - 79 instances of ArithmeticExtensionGate { num_ops: 10 }
+[DEBUG plonky2::plonk::circuit_builder] - 10 instances of ReducingExtensionGate { num_coeffs: 32 }
+[DEBUG plonky2::plonk::circuit_builder] - 57 instances of BaseSumGate { num_limbs: 63 } + Base: 2
+[DEBUG plonky2::plonk::circuit_builder] - 3254 instances of PoseidonGate(PhantomData<plonky2_field::goldilocks_field::GoldilocksField>)<WIDTH=12>
+[DEBUG plonky2::plonk::circuit_builder] - 238 instances of RandomAccessGate { bits: 4, num_copies: 4, num_extra_constants: 2, _phantom: PhantomData<plonky2_field::goldilocks_field::GoldilocksField> }<D=2>
+[DEBUG plonky2::plonk::circuit_builder] - 168 instances of ReducingGate { num_coeffs: 43 }
+[DEBUG plonky2::plonk::circuit_builder] - 40 instances of MulExtensionGate { num_ops: 13 }
+[DEBUG plonky2::plonk::circuit_builder] Degree before blinding & padding: 4026
+[DEBUG plonky2::plonk::circuit_builder] Degree after blinding & padding: 4096
+[TRACE plonky2::util::timing] 0.1672s to preprocess
+[TRACE plonky2::util::timing] | 0.0564s to generate sigma polynomials
+[TRACE plonky2::util::timing] | 0.0014s to IFFT
+[TRACE plonky2::util::timing] | 0.0099s to FFT + blinding
+[TRACE plonky2::util::timing] | 0.0017s to transpose LDEs
+[TRACE plonky2::util::timing] | 0.0753s to build Merkle tree
+[DEBUG plonky2::plonk::circuit_builder] Building circuit took 0.16728605s
+[DEBUG plonky2::util::timing] 0.3115s to prove
+[DEBUG plonky2::util::timing] | 0.0249s to run 7749 generators
+[DEBUG plonky2::util::timing] | 0.0043s to compute full witness
+[DEBUG plonky2::util::timing] | 0.0002s to compute wire polynomials
+[DEBUG plonky2::util::timing] | 0.1337s to compute wires commitment
+[DEBUG plonky2::util::timing] | | 0.0020s to IFFT
+[DEBUG plonky2::util::timing] | | 0.0135s to FFT + blinding
+[DEBUG plonky2::util::timing] | | 0.0036s to transpose LDEs
+[DEBUG plonky2::util::timing] | | 0.1130s to build Merkle tree
+[DEBUG plonky2::util::timing] | 0.0042s to compute partial products
+[DEBUG plonky2::util::timing] | 0.0266s to commit to partial products, Z's and, if any, lookup polynomials
+[DEBUG plonky2::util::timing] | | 0.0004s to IFFT
+[DEBUG plonky2::util::timing] | | 0.0024s to FFT + blinding
+[DEBUG plonky2::util::timing] | | 0.0005s to transpose LDEs
+[DEBUG plonky2::util::timing] | | 0.0230s to build Merkle tree
+[DEBUG plonky2::util::timing] | 0.0627s to compute quotient polys
+[DEBUG plonky2::util::timing] | 0.0002s to split up quotient polys
+[DEBUG plonky2::util::timing] | 0.0246s to commit to quotient polys
+[DEBUG plonky2::util::timing] | | 0.0021s to FFT + blinding
+[DEBUG plonky2::util::timing] | | 0.0004s to transpose LDEs
+[DEBUG plonky2::util::timing] | | 0.0213s to build Merkle tree
+[DEBUG plonky2::util::timing] | 0.0022s to construct the opening set, including lookups
+[DEBUG plonky2::util::timing] | 0.0197s to compute opening proofs
+[DEBUG plonky2::util::timing] | | 0.0033s to reduce batch of 256 polynomials
+[DEBUG plonky2::util::timing] | | 0.0000s to reduce batch of 2 polynomials
+[DEBUG plonky2::util::timing] | | 0.0016s to perform final FFT 32768
+[DEBUG plonky2::util::timing] | | 0.0032s to fold codewords in the commitment phase
+[DEBUG plonky2::util::timing] | | 0.0113s to find proof-of-work witness
+[INFO  bench_recursion] Single recursion proof degree 4096 = 2^12
+[DEBUG plonky2::util::context_tree] 3754 gates to root
+[DEBUG plonky2::util::context_tree] | 367 gates to evaluate the vanishing polynomial at our challenge point, zeta.
+[DEBUG plonky2::util::context_tree] | | 276 gates to evaluate gate constraints
+[DEBUG plonky2::util::context_tree] | | | 2 gates to evaluate NoopGate constraints
+[DEBUG plonky2::util::context_tree] | | | 0 gates to evaluate PublicInputGate constraints
+[DEBUG plonky2::util::context_tree] | | | 15 gates to evaluate BaseSumGate { num_limbs: 63 } + Base: 2 constraints
+[DEBUG plonky2::util::context_tree] | | | 27 gates to evaluate ReducingExtensionGate { num_coeffs: 32 } constraints
+[DEBUG plonky2::util::context_tree] | | | 33 gates to evaluate ReducingGate { num_coeffs: 43 } constraints
+[DEBUG plonky2::util::context_tree] | | | 11 gates to evaluate ArithmeticExtensionGate { num_ops: 10 } constraints
+[DEBUG plonky2::util::context_tree] | | | 10 gates to evaluate ArithmeticGate { num_ops: 20 } constraints
+[DEBUG plonky2::util::context_tree] | | | 10 gates to evaluate MulExtensionGate { num_ops: 13 } constraints
+[DEBUG plonky2::util::context_tree] | | | 18 gates to evaluate RandomAccessGate { bits: 4, num_copies: 4, num_extra_constants: 2, _phantom: PhantomData<plonky2_field::goldilocks_field::GoldilocksField> }<D=2> constraints
+[DEBUG plonky2::util::context_tree] | | | 23 gates to evaluate CosetInterpolationGate { subgroup_bits: 4, degree: 6, barycentric_weights: [17293822565076172801, 18374686475376656385, 18446744069413535745, 281474976645120, 17592186044416, 256, 18446744000695107601, 18446744065119617025, 1152921504338411520, 72057594037927936, 1048576, 18446462594437939201, 18446726477228539905, 18446744069414584065, 68719476720, 4294967296], _phantom: PhantomData<plonky2_field::goldilocks_field::GoldilocksField> }<D=2> constraints
+[DEBUG plonky2::util::context_tree] | | | 127 gates to evaluate PoseidonGate(PhantomData<plonky2_field::goldilocks_field::GoldilocksField>)<WIDTH=12> constraints
+[DEBUG plonky2::util::context_tree] | 1 gates to check vanishing and quotient polynomials.
+[DEBUG plonky2::util::context_tree] | 3271 gates to verify FRI proof
+[DEBUG plonky2::util::context_tree] | | 1 gates to check PoW
+[DEBUG plonky2::util::context_tree] | | 8 gates to precompute reduced evaluations
+[TRACE plonky2::util::context_tree] | | 135 gates to verify one (of 28) query rounds
+[TRACE plonky2::util::context_tree] | | | 81 gates to check FRI initial proof
+[TRACE plonky2::util::context_tree] | | | | 23 gates to verify 0'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 29 gates to verify 1'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 15 gates to verify 2'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 14 gates to verify 3'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | 16 gates to compute x from its index
+[TRACE plonky2::util::context_tree] | | | 8 gates to combine initial oracles
+[TRACE plonky2::util::context_tree] | | | 4 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 12 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 8 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to evaluate final polynomial of length 16
+[DEBUG plonky2::util::context_tree] | | 114 gates to verify one (of 28) query rounds
+[DEBUG plonky2::util::context_tree] | | | 81 gates to check FRI initial proof
+[DEBUG plonky2::util::context_tree] | | | | 23 gates to verify 0'th initial Merkle proof
+[DEBUG plonky2::util::context_tree] | | | | 29 gates to verify 1'th initial Merkle proof
+[DEBUG plonky2::util::context_tree] | | | | 15 gates to verify 2'th initial Merkle proof
+[DEBUG plonky2::util::context_tree] | | | | 14 gates to verify 3'th initial Merkle proof
+[DEBUG plonky2::util::context_tree] | | | 0 gates to compute x from its index
+[DEBUG plonky2::util::context_tree] | | | 6 gates to combine initial oracles
+[DEBUG plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[DEBUG plonky2::util::context_tree] | | | 12 gates to verify FRI round Merkle proof.
+[DEBUG plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[DEBUG plonky2::util::context_tree] | | | 8 gates to verify FRI round Merkle proof.
+[DEBUG plonky2::util::context_tree] | | | 1 gates to evaluate final polynomial of length 16
+[TRACE plonky2::util::context_tree] | | 116 gates to verify one (of 28) query rounds
+[TRACE plonky2::util::context_tree] | | | 81 gates to check FRI initial proof
+[TRACE plonky2::util::context_tree] | | | | 23 gates to verify 0'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 29 gates to verify 1'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 15 gates to verify 2'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 14 gates to verify 3'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | 0 gates to compute x from its index
+[TRACE plonky2::util::context_tree] | | | 8 gates to combine initial oracles
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 12 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 8 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to evaluate final polynomial of length 16
+[TRACE plonky2::util::context_tree] | | 114 gates to verify one (of 28) query rounds
+[TRACE plonky2::util::context_tree] | | | 81 gates to check FRI initial proof
+[TRACE plonky2::util::context_tree] | | | | 23 gates to verify 0'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 29 gates to verify 1'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 15 gates to verify 2'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 14 gates to verify 3'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | 0 gates to compute x from its index
+[TRACE plonky2::util::context_tree] | | | 6 gates to combine initial oracles
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 12 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 8 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to evaluate final polynomial of length 16
+[TRACE plonky2::util::context_tree] | | 114 gates to verify one (of 28) query rounds
+[TRACE plonky2::util::context_tree] | | | 81 gates to check FRI initial proof
+[TRACE plonky2::util::context_tree] | | | | 23 gates to verify 0'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 29 gates to verify 1'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 15 gates to verify 2'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 14 gates to verify 3'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | 0 gates to compute x from its index
+[TRACE plonky2::util::context_tree] | | | 6 gates to combine initial oracles
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 12 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 8 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to evaluate final polynomial of length 16
+[TRACE plonky2::util::context_tree] | | 117 gates to verify one (of 28) query rounds
+[TRACE plonky2::util::context_tree] | | | 81 gates to check FRI initial proof
+[TRACE plonky2::util::context_tree] | | | | 23 gates to verify 0'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 29 gates to verify 1'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 15 gates to verify 2'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 14 gates to verify 3'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | 0 gates to compute x from its index
+[TRACE plonky2::util::context_tree] | | | 9 gates to combine initial oracles
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 12 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 8 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to evaluate final polynomial of length 16
+[TRACE plonky2::util::context_tree] | | 115 gates to verify one (of 28) query rounds
+[TRACE plonky2::util::context_tree] | | | 81 gates to check FRI initial proof
+[TRACE plonky2::util::context_tree] | | | | 23 gates to verify 0'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 29 gates to verify 1'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 15 gates to verify 2'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 14 gates to verify 3'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | 0 gates to compute x from its index
+[TRACE plonky2::util::context_tree] | | | 6 gates to combine initial oracles
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 12 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 2 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 8 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to evaluate final polynomial of length 16
+[TRACE plonky2::util::context_tree] | | 115 gates to verify one (of 28) query rounds
+[TRACE plonky2::util::context_tree] | | | 81 gates to check FRI initial proof
+[TRACE plonky2::util::context_tree] | | | | 23 gates to verify 0'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 29 gates to verify 1'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 15 gates to verify 2'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 14 gates to verify 3'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | 0 gates to compute x from its index
+[TRACE plonky2::util::context_tree] | | | 7 gates to combine initial oracles
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 12 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 8 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to evaluate final polynomial of length 16
+[TRACE plonky2::util::context_tree] | | 115 gates to verify one (of 28) query rounds
+[TRACE plonky2::util::context_tree] | | | 81 gates to check FRI initial proof
+[TRACE plonky2::util::context_tree] | | | | 23 gates to verify 0'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 29 gates to verify 1'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 15 gates to verify 2'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 14 gates to verify 3'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | 0 gates to compute x from its index
+[TRACE plonky2::util::context_tree] | | | 7 gates to combine initial oracles
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 12 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 8 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to evaluate final polynomial of length 16
+[TRACE plonky2::util::context_tree] | | 114 gates to verify one (of 28) query rounds
+[TRACE plonky2::util::context_tree] | | | 81 gates to check FRI initial proof
+[TRACE plonky2::util::context_tree] | | | | 23 gates to verify 0'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 29 gates to verify 1'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 15 gates to verify 2'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 14 gates to verify 3'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | 0 gates to compute x from its index
+[TRACE plonky2::util::context_tree] | | | 6 gates to combine initial oracles
+[TRACE plonky2::util::context_tree] | | | 2 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 12 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 8 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to evaluate final polynomial of length 16
+[TRACE plonky2::util::context_tree] | | 120 gates to verify one (of 28) query rounds
+[TRACE plonky2::util::context_tree] | | | 81 gates to check FRI initial proof
+[TRACE plonky2::util::context_tree] | | | | 23 gates to verify 0'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 29 gates to verify 1'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 15 gates to verify 2'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 14 gates to verify 3'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | 0 gates to compute x from its index
+[TRACE plonky2::util::context_tree] | | | 8 gates to combine initial oracles
+[TRACE plonky2::util::context_tree] | | | 4 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 12 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 8 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to evaluate final polynomial of length 16
+[TRACE plonky2::util::context_tree] | | 114 gates to verify one (of 28) query rounds
+[TRACE plonky2::util::context_tree] | | | 81 gates to check FRI initial proof
+[TRACE plonky2::util::context_tree] | | | | 23 gates to verify 0'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 29 gates to verify 1'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 15 gates to verify 2'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 14 gates to verify 3'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | 0 gates to compute x from its index
+[TRACE plonky2::util::context_tree] | | | 7 gates to combine initial oracles
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 12 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 8 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to evaluate final polynomial of length 16
+[TRACE plonky2::util::context_tree] | | 116 gates to verify one (of 28) query rounds
+[TRACE plonky2::util::context_tree] | | | 81 gates to check FRI initial proof
+[TRACE plonky2::util::context_tree] | | | | 23 gates to verify 0'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 29 gates to verify 1'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 15 gates to verify 2'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 14 gates to verify 3'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | 0 gates to compute x from its index
+[TRACE plonky2::util::context_tree] | | | 7 gates to combine initial oracles
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 12 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 8 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to evaluate final polynomial of length 16
+[TRACE plonky2::util::context_tree] | | 114 gates to verify one (of 28) query rounds
+[TRACE plonky2::util::context_tree] | | | 81 gates to check FRI initial proof
+[TRACE plonky2::util::context_tree] | | | | 23 gates to verify 0'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 29 gates to verify 1'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 15 gates to verify 2'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 14 gates to verify 3'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | 0 gates to compute x from its index
+[TRACE plonky2::util::context_tree] | | | 6 gates to combine initial oracles
+[TRACE plonky2::util::context_tree] | | | 2 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 12 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 8 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to evaluate final polynomial of length 16
+[TRACE plonky2::util::context_tree] | | 115 gates to verify one (of 28) query rounds
+[TRACE plonky2::util::context_tree] | | | 81 gates to check FRI initial proof
+[TRACE plonky2::util::context_tree] | | | | 23 gates to verify 0'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 29 gates to verify 1'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 15 gates to verify 2'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 14 gates to verify 3'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | 0 gates to compute x from its index
+[TRACE plonky2::util::context_tree] | | | 6 gates to combine initial oracles
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 12 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 2 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 8 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to evaluate final polynomial of length 16
+[TRACE plonky2::util::context_tree] | | 116 gates to verify one (of 28) query rounds
+[TRACE plonky2::util::context_tree] | | | 81 gates to check FRI initial proof
+[TRACE plonky2::util::context_tree] | | | | 23 gates to verify 0'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 29 gates to verify 1'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 15 gates to verify 2'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 14 gates to verify 3'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | 0 gates to compute x from its index
+[TRACE plonky2::util::context_tree] | | | 9 gates to combine initial oracles
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 12 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 8 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to evaluate final polynomial of length 16
+[TRACE plonky2::util::context_tree] | | 115 gates to verify one (of 28) query rounds
+[TRACE plonky2::util::context_tree] | | | 81 gates to check FRI initial proof
+[TRACE plonky2::util::context_tree] | | | | 23 gates to verify 0'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 29 gates to verify 1'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 15 gates to verify 2'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 14 gates to verify 3'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | 0 gates to compute x from its index
+[TRACE plonky2::util::context_tree] | | | 6 gates to combine initial oracles
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 12 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 8 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to evaluate final polynomial of length 16
+[TRACE plonky2::util::context_tree] | | 114 gates to verify one (of 28) query rounds
+[TRACE plonky2::util::context_tree] | | | 81 gates to check FRI initial proof
+[TRACE plonky2::util::context_tree] | | | | 23 gates to verify 0'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 29 gates to verify 1'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 15 gates to verify 2'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 14 gates to verify 3'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | 0 gates to compute x from its index
+[TRACE plonky2::util::context_tree] | | | 7 gates to combine initial oracles
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 12 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 8 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to evaluate final polynomial of length 16
+[TRACE plonky2::util::context_tree] | | 116 gates to verify one (of 28) query rounds
+[TRACE plonky2::util::context_tree] | | | 81 gates to check FRI initial proof
+[TRACE plonky2::util::context_tree] | | | | 23 gates to verify 0'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 29 gates to verify 1'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 15 gates to verify 2'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 14 gates to verify 3'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | 0 gates to compute x from its index
+[TRACE plonky2::util::context_tree] | | | 7 gates to combine initial oracles
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 12 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 8 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to evaluate final polynomial of length 16
+[TRACE plonky2::util::context_tree] | | 113 gates to verify one (of 28) query rounds
+[TRACE plonky2::util::context_tree] | | | 81 gates to check FRI initial proof
+[TRACE plonky2::util::context_tree] | | | | 23 gates to verify 0'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 29 gates to verify 1'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 15 gates to verify 2'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 14 gates to verify 3'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | 0 gates to compute x from its index
+[TRACE plonky2::util::context_tree] | | | 6 gates to combine initial oracles
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 12 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 8 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to evaluate final polynomial of length 16
+[TRACE plonky2::util::context_tree] | | 135 gates to verify one (of 28) query rounds
+[TRACE plonky2::util::context_tree] | | | 81 gates to check FRI initial proof
+[TRACE plonky2::util::context_tree] | | | | 23 gates to verify 0'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 29 gates to verify 1'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 15 gates to verify 2'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 14 gates to verify 3'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | 16 gates to compute x from its index
+[TRACE plonky2::util::context_tree] | | | 8 gates to combine initial oracles
+[TRACE plonky2::util::context_tree] | | | 4 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 12 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 8 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to evaluate final polynomial of length 16
+[TRACE plonky2::util::context_tree] | | 115 gates to verify one (of 28) query rounds
+[TRACE plonky2::util::context_tree] | | | 81 gates to check FRI initial proof
+[TRACE plonky2::util::context_tree] | | | | 23 gates to verify 0'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 29 gates to verify 1'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 15 gates to verify 2'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 14 gates to verify 3'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | 0 gates to compute x from its index
+[TRACE plonky2::util::context_tree] | | | 7 gates to combine initial oracles
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 12 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 8 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to evaluate final polynomial of length 16
+[TRACE plonky2::util::context_tree] | | 115 gates to verify one (of 28) query rounds
+[TRACE plonky2::util::context_tree] | | | 81 gates to check FRI initial proof
+[TRACE plonky2::util::context_tree] | | | | 23 gates to verify 0'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 29 gates to verify 1'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 15 gates to verify 2'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 14 gates to verify 3'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | 0 gates to compute x from its index
+[TRACE plonky2::util::context_tree] | | | 7 gates to combine initial oracles
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 12 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 8 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to evaluate final polynomial of length 16
+[TRACE plonky2::util::context_tree] | | 114 gates to verify one (of 28) query rounds
+[TRACE plonky2::util::context_tree] | | | 81 gates to check FRI initial proof
+[TRACE plonky2::util::context_tree] | | | | 23 gates to verify 0'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 29 gates to verify 1'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 15 gates to verify 2'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 14 gates to verify 3'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | 0 gates to compute x from its index
+[TRACE plonky2::util::context_tree] | | | 6 gates to combine initial oracles
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 12 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 8 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to evaluate final polynomial of length 16
+[TRACE plonky2::util::context_tree] | | 115 gates to verify one (of 28) query rounds
+[TRACE plonky2::util::context_tree] | | | 81 gates to check FRI initial proof
+[TRACE plonky2::util::context_tree] | | | | 23 gates to verify 0'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 29 gates to verify 1'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 15 gates to verify 2'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 14 gates to verify 3'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | 0 gates to compute x from its index
+[TRACE plonky2::util::context_tree] | | | 7 gates to combine initial oracles
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 12 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 8 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to evaluate final polynomial of length 16
+[TRACE plonky2::util::context_tree] | | 116 gates to verify one (of 28) query rounds
+[TRACE plonky2::util::context_tree] | | | 81 gates to check FRI initial proof
+[TRACE plonky2::util::context_tree] | | | | 23 gates to verify 0'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 29 gates to verify 1'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 15 gates to verify 2'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 14 gates to verify 3'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | 0 gates to compute x from its index
+[TRACE plonky2::util::context_tree] | | | 8 gates to combine initial oracles
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 12 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 8 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to evaluate final polynomial of length 16
+[TRACE plonky2::util::context_tree] | | 115 gates to verify one (of 28) query rounds
+[TRACE plonky2::util::context_tree] | | | 81 gates to check FRI initial proof
+[TRACE plonky2::util::context_tree] | | | | 23 gates to verify 0'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 29 gates to verify 1'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 15 gates to verify 2'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 14 gates to verify 3'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | 0 gates to compute x from its index
+[TRACE plonky2::util::context_tree] | | | 6 gates to combine initial oracles
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 12 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 2 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 8 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to evaluate final polynomial of length 16
+[TRACE plonky2::util::context_tree] | | 115 gates to verify one (of 28) query rounds
+[TRACE plonky2::util::context_tree] | | | 81 gates to check FRI initial proof
+[TRACE plonky2::util::context_tree] | | | | 23 gates to verify 0'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 29 gates to verify 1'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 15 gates to verify 2'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | | 14 gates to verify 3'th initial Merkle proof
+[TRACE plonky2::util::context_tree] | | | 0 gates to compute x from its index
+[TRACE plonky2::util::context_tree] | | | 7 gates to combine initial oracles
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 12 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to infer evaluation using interpolation
+[TRACE plonky2::util::context_tree] | | | 8 gates to verify FRI round Merkle proof.
+[TRACE plonky2::util::context_tree] | | | 1 gates to evaluate final polynomial of length 16
+[DEBUG plonky2::plonk::circuit_builder] Total gate counts:
+[DEBUG plonky2::plonk::circuit_builder] - 72 instances of ArithmeticGate { num_ops: 20 }
+[DEBUG plonky2::plonk::circuit_builder] - 56 instances of CosetInterpolationGate { subgroup_bits: 4, degree: 6, barycentric_weights: [17293822565076172801, 18374686475376656385, 18446744069413535745, 281474976645120, 17592186044416, 256, 18446744000695107601, 18446744065119617025, 1152921504338411520, 72057594037927936, 1048576, 18446462594437939201, 18446726477228539905, 18446744069414584065, 68719476720, 4294967296], _phantom: PhantomData<plonky2_field::goldilocks_field::GoldilocksField> }<D=2>
+[DEBUG plonky2::plonk::circuit_builder] - 246 instances of ArithmeticExtensionGate { num_ops: 10 }
+[DEBUG plonky2::plonk::circuit_builder] - 48 instances of ReducingExtensionGate { num_coeffs: 32 }
+[DEBUG plonky2::plonk::circuit_builder] - 57 instances of BaseSumGate { num_limbs: 63 } + Base: 2
+[DEBUG plonky2::plonk::circuit_builder] - 2774 instances of PoseidonGate(PhantomData<plonky2_field::goldilocks_field::GoldilocksField>)<WIDTH=12>
+[DEBUG plonky2::plonk::circuit_builder] - 196 instances of RandomAccessGate { bits: 4, num_copies: 4, num_extra_constants: 2, _phantom: PhantomData<plonky2_field::goldilocks_field::GoldilocksField> }<D=2>
+[DEBUG plonky2::plonk::circuit_builder] - 168 instances of ReducingGate { num_coeffs: 43 }
+[DEBUG plonky2::plonk::circuit_builder] - 30 instances of PoseidonMdsGate(PhantomData<plonky2_field::goldilocks_field::GoldilocksField>)<WIDTH=12>
+[DEBUG plonky2::plonk::circuit_builder] - 107 instances of MulExtensionGate { num_ops: 13 }
+[DEBUG plonky2::plonk::circuit_builder] Degree before blinding & padding: 3801
+[DEBUG plonky2::plonk::circuit_builder] Degree after blinding & padding: 4096
+[TRACE plonky2::util::timing] 0.1709s to preprocess
+[TRACE plonky2::util::timing] | 0.0525s to generate sigma polynomials
+[TRACE plonky2::util::timing] | 0.0016s to IFFT
+[TRACE plonky2::util::timing] | 0.0099s to FFT + blinding
+[TRACE plonky2::util::timing] | 0.0016s to transpose LDEs
+[TRACE plonky2::util::timing] | 0.0809s to build Merkle tree
+[DEBUG plonky2::plonk::circuit_builder] Building circuit took 0.17098837s
+[DEBUG plonky2::util::timing] 0.3162s to prove
+[DEBUG plonky2::util::timing] | 0.0254s to run 9674 generators
+[DEBUG plonky2::util::timing] | 0.0037s to compute full witness
+[DEBUG plonky2::util::timing] | 0.0002s to compute wire polynomials
+[DEBUG plonky2::util::timing] | 0.1270s to compute wires commitment
+[DEBUG plonky2::util::timing] | | 0.0022s to IFFT
+[DEBUG plonky2::util::timing] | | 0.0145s to FFT + blinding
+[DEBUG plonky2::util::timing] | | 0.0037s to transpose LDEs
+[DEBUG plonky2::util::timing] | | 0.1052s to build Merkle tree
+[DEBUG plonky2::util::timing] | 0.0039s to compute partial products
+[DEBUG plonky2::util::timing] | 0.0310s to commit to partial products, Z's and, if any, lookup polynomials
+[DEBUG plonky2::util::timing] | | 0.0006s to IFFT
+[DEBUG plonky2::util::timing] | | 0.0022s to FFT + blinding
+[DEBUG plonky2::util::timing] | | 0.0005s to transpose LDEs
+[DEBUG plonky2::util::timing] | | 0.0272s to build Merkle tree
+[DEBUG plonky2::util::timing] | 0.0719s to compute quotient polys
+[DEBUG plonky2::util::timing] | 0.0001s to split up quotient polys
+[DEBUG plonky2::util::timing] | 0.0219s to commit to quotient polys
+[DEBUG plonky2::util::timing] | | 0.0021s to FFT + blinding
+[DEBUG plonky2::util::timing] | | 0.0005s to transpose LDEs
+[DEBUG plonky2::util::timing] | | 0.0189s to build Merkle tree
+[DEBUG plonky2::util::timing] | 0.0021s to construct the opening set, including lookups
+[DEBUG plonky2::util::timing] | 0.0211s to compute opening proofs
+[DEBUG plonky2::util::timing] | | 0.0047s to reduce batch of 256 polynomials
+[DEBUG plonky2::util::timing] | | 0.0000s to reduce batch of 2 polynomials
+[DEBUG plonky2::util::timing] | | 0.0017s to perform final FFT 32768
+[DEBUG plonky2::util::timing] | | 0.0038s to fold codewords in the commitment phase
+[DEBUG plonky2::util::timing] | | 0.0106s to find proof-of-work witness
+[INFO  bench_recursion] Double recursion proof degree 4096 = 2^12
+[INFO  bench_recursion] Proof length: 127192 bytes
+[INFO  bench_recursion] 0.0040s to compress proof
+[INFO  bench_recursion] Compressed proof length: 115068 bytes
+[INFO  bench_recursion] Common circuit data length: 1345 bytes
